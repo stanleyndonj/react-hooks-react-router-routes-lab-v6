@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./NavBar.css";
 
-function Actors() {
+function NavBar() {
   return (
-    <>
-      <header>
-        {/* What component should go here? */}
-      </header>
-      <main>
-        {/* Actor info here! */}
-      </main>
-    </>
-  );
+    <nav className="navbar">
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/directors">Directors</NavLink>
+      <NavLink to="/actors">Actors</NavLink>
+    </nav>
+    );
 };
 
-export default Actors;
+export default NavBar;
