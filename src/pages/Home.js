@@ -1,16 +1,25 @@
-import NavBar from "../components/NavBar"
+import React from 'react'
+import MovieCard from '../components/MovieCard'
+import NavBar from '../components/NavBar'
 
-function ErrorPage() {
-    return (
-        <>
-            <header>
-                <NavBar />
-            </header>
-            <main>
-                <h1>Oops! Looks like something went wrong.</h1>
-            </main>
-        </>
-    );
-};
+const Home = () => {
+  const movies = [
+    { id: 1, title: 'Doctor Strange' },
+    { id: 2, title: 'Trolls' },
+    { id: 3, title: 'Pitch Perfect' },
+  ]
 
-export default ErrorPage;
+  return (
+    <div>
+      <NavBar />
+      <h1>Home Page</h1>
+      <div className="movie-list">
+        {movies.map((movie) => (
+          <MovieCard key={movie.id} id={movie.id} title={movie.title} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default Home
